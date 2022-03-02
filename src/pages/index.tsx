@@ -8,6 +8,7 @@ import Switch from '@components/ui/Switch/Switch';
 import TextField from '@components/ui/TextField/TextField';
 import { Form, Formik } from 'formik';
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import { useRef } from 'react';
 import toast from 'react-hot-toast';
 import { FormValues } from 'src/types/formValues';
@@ -59,6 +60,9 @@ const Home: NextPage = () => {
     >
       {({ resetForm, values }) => (
         <>
+          <Head>
+            <title>Password generator</title>
+          </Head>
           <TopBar />
           <div
             ref={containerRef}

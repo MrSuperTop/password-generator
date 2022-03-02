@@ -5,7 +5,7 @@ import { pullAll } from 'lodash-es';
 export const charSets = {
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  specialSymbols: `!"#$%&'()*+,-./:;<=>?@[]^_\\{|}~`,
+  specialSymbols: '!"#$%&\'()*+,-./:;<=>?@[]^_\\{|}~',
   numbers: '0123456789'
 } as const;
 
@@ -18,7 +18,7 @@ export const generatePassword = (
   if (!values.toUseCustomCharset) {
     const keys = Object.keys(charSets) as (keyof typeof charSets)[];
     for (let key of keys) {
-      key = key as keyof typeof charSets
+      key = key as keyof typeof charSets;
   
       if (values[key]) {
         charSet = charSet.concat(charSets[key].split(''));
