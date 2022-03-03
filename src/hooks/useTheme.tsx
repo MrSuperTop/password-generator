@@ -1,5 +1,5 @@
 import { useFormikContext } from 'formik';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { localThemeKey } from 'src/pages';
 import { FormValues } from 'src/types/formValues';
 
@@ -10,7 +10,7 @@ const useTheme = (
   const { values: { persistState } } = useFormikContext<FormValues>();
   const [theme, setTheme] = useState<themeVariants>(defaultTheme);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const readValue = localStorage.getItem(localThemeKey) as themeVariants;
 
     if (!readValue) return;

@@ -2,7 +2,7 @@ import Button from '@components/ui/Button/Button';
 import { MoonIcon, SunIcon } from '@heroicons/react/outline';
 import { useFormikContext } from 'formik';
 import { omit } from 'lodash-es';
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import useTheme from 'src/hooks/useTheme';
 import { localDataKey, localThemeKey } from 'src/pages';
@@ -36,7 +36,7 @@ const TopBar: React.VFC<TopBarProps> = () => {
     };
   }, [values]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const loadedData = localStorage.getItem(localDataKey);
   
     if (loadedData) {
